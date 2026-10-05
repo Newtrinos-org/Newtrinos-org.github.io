@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newtrinos</title>
+<meta name="description" content="Newtrinos.jl — open-source global analysis of neutrino data: documentation, code, verifications and results.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root {
+  --bg: #ffffff; --surface: #f6f7f9; --border: #e2e5ea; --text: #1c2330; --muted: #5d6676;
+  --accent: #2f5fd0; --accent-soft: #e8eefc; --radius: 12px;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151b; --surface: #1a1f27; --border: #2b323d; --text: #e6e9ef; --muted: #9aa3b2;
+    --accent: #7fa2ff; --accent-soft: #1f2a44; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151b; --surface: #1a1f27; --border: #2b323d; --text: #e6e9ef; --muted: #9aa3b2;
+  --accent: #7fa2ff; --accent-soft: #1f2a44; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--font-body); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; }
+header.hero { padding-block: 64px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+header.hero img { width: 96px; height: 96px; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.1; margin: 0 0 0.4rem; text-wrap: balance; }
+.lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 1.1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; padding-block: 16px 8px; }
+.card { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 22px; border: 1px solid var(--border);
+        border-radius: var(--radius); background: var(--surface); color: var(--text); transition: border-color .15s, transform .15s; }
+a.card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+.card .kicker { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.card h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; margin: 0; }
+.card p { margin: 0; color: var(--muted); flex: 1; }
+.card .go { color: var(--accent); font-weight: 500; }
+.card.soon { border-style: dashed; background: transparent; }
+.card.soon .go { color: var(--muted); }
+section.cite { margin-block: 40px 24px; padding: 20px 22px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 var(--radius) var(--radius) 0; }
+section.cite h3 { margin: 0 0 6px; font-size: 1rem; }
+section.cite p { margin: 0; overflow-wrap: anywhere; }
+footer { padding-block: 24px 48px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
+@media (max-width: 560px) { header.hero { grid-template-columns: 1fr; padding-block: 40px 16px; } header.hero img { width: 72px; height: 72px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <picture>
+      <source srcset="assets/logo-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/logo.svg" alt="Newtrinos logo" width="96" height="96">
+    </picture>
+    <div>
+      <h1>Newtrinos</h1>
+      <p class="lede">Open-source global analysis of neutrino data. <a href="https://github.com/Newtrinos-org/Newtrinos.jl">Newtrinos.jl</a>
+      combines modular physics models, experiment likelihoods built from public data releases, and differentiable statistical inference.</p>
+    </div>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="https://newtrinos-org.github.io/Newtrinos.jl/stable/">
+      <span class="kicker">Documentation</span>
+      <h2>Docs</h2>
+      <p>Installation, tutorials, the physics and experiment modules, and the API reference.</p>
+      <span class="go">Read the documentation →</span>
+    </a>
+    <a class="card" href="https://github.com/Newtrinos-org/Newtrinos.jl">
+      <span class="kicker">Code</span>
+      <h2>GitHub</h2>
+      <p>The Newtrinos.jl Julia package, MIT licensed. Issues and contributions welcome.</p>
+      <span class="go">Newtrinos-org/Newtrinos.jl →</span>
+    </a>
+    <a class="card" href="https://newtrinos-org.github.io/newtrinos-verifications/">
+      <span class="kicker">Verifications</span>
+      <h2>Verifications</h2>
+      <p>Published results and analysis inputs reproduced with Newtrinos.jl, each with its code, the exact commit and downloadable results.</p>
+      <span class="go">Browse the verifications →</span>
+    </a>
+    <div class="card soon" aria-disabled="true">
+      <span class="kicker">Results</span>
+      <h2>Results</h2>
+      <p>Physics results obtained with Newtrinos.jl, with data products and the code to reproduce them.</p>
+      <span class="go">Coming soon</span>
+    </div>
+  </div>
+
+  <section class="cite">
+    <h3>Citing Newtrinos.jl</h3>
+    <p><i>Newtrinos.jl: A Julia Package for Global Analysis of Neutrino Data</i>, Journal of Open Source Software 11(125), 9644,
+    <a href="https://doi.org/10.21105/joss.09644">doi:10.21105/joss.09644</a> · software archive:
+    <a href="https://doi.org/10.5281/zenodo.23036152">doi:10.5281/zenodo.23036152</a></p>
+  </section>
+
+  <footer>Newtrinos.jl is open source under the MIT license · <a href="https://github.com/Newtrinos-org">github.com/Newtrinos-org</a></footer>
+</main>
+</body>
+</html>
